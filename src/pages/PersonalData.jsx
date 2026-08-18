@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { FiArrowLeft, FiUser, FiMail, FiPhone, FiMapPin, FiCalendar, FiSave, FiEdit3, FiCheck } from 'react-icons/fi';
 import Header from '../components/Header';
 import Card from '../components/Card';
@@ -30,7 +29,6 @@ const InputField = ({ id, label, type, value, onChange, placeholder, icon: Icon,
 );
 
 const PersonalData = () => {
-  const navigate = useNavigate();
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);

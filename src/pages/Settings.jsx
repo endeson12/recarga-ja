@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { FiArrowLeft, FiSettings, FiMoon, FiSun, FiGlobe, FiShield, FiBell, FiEye, FiEyeOff } from 'react-icons/fi';
 import Header from '../components/Header';
 import Card from '../components/Card';
 
 const Settings = () => {
-  const navigate = useNavigate();
   const [settings, setSettings] = useState({
     darkMode: true,
     notifications: true,
@@ -30,11 +28,11 @@ const Settings = () => {
     }));
   };
 
-  const SettingItem = ({ icon: Icon, title, description, children, color = 'primary-green' }) => (
+  const SettingItem = ({ icon: IconComponent, title, description, children, color = 'primary-green' }) => (
     <div className="flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-colors">
       <div className="flex items-center space-x-4">
         <div className={`p-2 rounded-lg bg-${color}-100 dark:bg-${color}-900`}>
-          <Icon className={`w-5 h-5 text-${color}-600`} />
+          {IconComponent && <IconComponent className={`w-5 h-5 text-${color}-600`} />}
         </div>
         <div>
           <h3 className="font-semibold text-gray-900 dark:text-light-text">{title}</h3>

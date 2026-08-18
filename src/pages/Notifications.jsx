@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { FiArrowLeft, FiBell, FiBellOff, FiCheck, FiSettings, FiZap, FiShield, FiCreditCard } from 'react-icons/fi';
 import Header from '../components/Header';
 import Card from '../components/Card';
 
-const ToggleSwitch = ({ label, description, enabled, setEnabled, icon: Icon, color = 'primary-green' }) => (
+const ToggleSwitch = ({ label, description, enabled, setEnabled, icon: IconComponent, color = 'primary-green' }) => (
   <div className="flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl transition-colors">
     <div className="flex items-center space-x-4">
       <div className={`p-2 rounded-lg ${enabled ? `bg-${color}-100 dark:bg-${color}-900` : 'bg-gray-100 dark:bg-gray-700'}`}>
-        <Icon className={`w-5 h-5 ${enabled ? `text-${color}-600` : 'text-gray-400'}`} />
+        {IconComponent && <IconComponent className={`w-5 h-5 ${enabled ? `text-${color}-600` : 'text-gray-400'}`} />}
       </div>
       <div>
         <h3 className="font-semibold text-gray-900 dark:text-light-text">{label}</h3>
@@ -65,7 +64,6 @@ const NotificationCard = ({ title, description, time, unread = false, type = 'in
 };
 
 const Notifications = () => {
-  const navigate = useNavigate();
   
   const [notifications, setNotifications] = useState({
     promo: true,

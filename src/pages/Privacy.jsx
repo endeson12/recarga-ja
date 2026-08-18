@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { FiArrowLeft, FiShield, FiLock, FiEye, FiEyeOff, FiDownload, FiCheck, FiAlertTriangle } from 'react-icons/fi';
 import Header from '../components/Header';
 import Card from '../components/Card';
 
 const Privacy = () => {
-  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
   const [showDataDetails, setShowDataDetails] = useState(false);
 

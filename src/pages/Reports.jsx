@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { FiTrendingUp, FiTrendingDown, FiDollarSign, FiCreditCard, FiCalendar, FiDownload, FiBarChart, FiPieChart, FiActivity } from 'react-icons/fi';
 import Header from '../components/Header';
 import Card from '../components/Card';
 import { mockStatement } from '../data/mock';
 
 const Reports = () => {
-  const navigate = useNavigate();
   const [selectedPeriod, setSelectedPeriod] = useState('30');
 
   // Função para filtrar dados por período

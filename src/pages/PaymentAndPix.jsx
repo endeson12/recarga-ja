@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { FiArrowLeft, FiCreditCard, FiSmartphone, FiShield, FiPlus, FiEdit3, FiTrash2, FiCheck, FiCopy, FiMaximize2 } from 'react-icons/fi';
 import Header from '../components/Header';
 import Card from '../components/Card';
@@ -83,7 +82,6 @@ const PixInfo = ({ pixKey, onCopy }) => (
 );
 
 const PaymentAndPix = () => {
-  const navigate = useNavigate();
   const [paymentMethods, setPaymentMethods] = useState(mockPaymentMethods);
   const [pixKey] = useState('jennifer@email.com');
   const [showAddMethod, setShowAddMethod] = useState(false);

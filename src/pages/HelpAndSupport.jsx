@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { FiArrowLeft, FiHelpCircle, FiMessageCircle, FiPhone, FiMail, FiChevronDown, FiChevronUp, FiSearch, FiExternalLink } from 'react-icons/fi';
 import Header from '../components/Header';
 import Card from '../components/Card';
@@ -27,11 +26,11 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => (
   </div>
 );
 
-const ContactMethod = ({ icon: Icon, title, description, action, color = 'primary-green' }) => (
+const ContactMethod = ({ icon: IconComponent, title, description, action, color = 'primary-green' }) => (
   <div className="p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-200">
     <div className="flex items-start space-x-4">
       <div className={`p-3 rounded-lg bg-${color}-100 dark:bg-${color}-900`}>
-        <Icon className={`w-6 h-6 text-${color}-600`} />
+        {IconComponent && <IconComponent className={`w-6 h-6 text-${color}-600`} />}
       </div>
       <div className="flex-1">
         <h3 className="font-semibold text-gray-900 dark:text-light-text mb-2">{title}</h3>
@@ -49,7 +48,6 @@ const ContactMethod = ({ icon: Icon, title, description, action, color = 'primar
 );
 
 const HelpAndSupport = () => {
-  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [openFAQ, setOpenFAQ] = useState(null);
 
