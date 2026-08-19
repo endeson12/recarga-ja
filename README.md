@@ -4,6 +4,8 @@
 [![React](https://img.shields.io/badge/React-19-149ECA?logo=react)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
 
+[**Abrir demonstração pública →**](https://endeson12.github.io/recarga-ja/)
+
 Protótipo mobile-first de uma aplicação para recarga e acompanhamento de cartões de transporte. O projeto explora um fluxo completo de produto, da entrada do usuário à confirmação da recarga.
 
 ## Fluxos disponíveis
