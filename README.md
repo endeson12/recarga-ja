@@ -8,6 +8,8 @@
 
 Protótipo mobile-first de uma aplicação para recarga e acompanhamento de cartões de transporte. O projeto explora um fluxo completo de produto, da entrada do usuário à confirmação da recarga.
 
+![Demonstração pública do RecargaJá](docs/recarga-ja-demo.png)
+
 ## Fluxos disponíveis
 
 - login demonstrativo com validação de formulário;
