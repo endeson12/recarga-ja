@@ -1,186 +1,80 @@
-# RecargaJá - Aplicativo de Recarga de Cartão de Transporte
+# RecargaJá
 
-Um aplicativo web moderno e responsivo para recarga de cartões de transporte público, desenvolvido com React.js e Tailwind CSS.
+[![CI](https://github.com/endeson12/recarga-ja/actions/workflows/ci.yml/badge.svg)](https://github.com/endeson12/recarga-ja/actions/workflows/ci.yml)
+[![React](https://img.shields.io/badge/React-19-149ECA?logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
 
-## 🚀 Funcionalidades
+Protótipo mobile-first de uma aplicação para recarga e acompanhamento de cartões de transporte. O projeto explora um fluxo completo de produto, da entrada do usuário à confirmação da recarga.
 
-### ✅ Implementadas
-- **Autenticação**: Tela de login com validação de formulário
-- **Dashboard**: Visão geral dos cartões e atividades recentes
-- **Recarga**: Sistema completo de recarga com seleção de cartão, valor e forma de pagamento
-- **Extrato**: Histórico detalhado de transações com filtros
-- **Perfil**: Gerenciamento de dados pessoais e configurações
-- **Design Responsivo**: Interface otimizada para dispositivos móveis
+## Fluxos disponíveis
 
-### 🎨 Design System
-- **Cores**: Paleta moderna com azul primário (#2563eb)
-- **Tipografia**: Fontes Inter e Poppins
-- **Componentes**: Sistema de componentes reutilizáveis
-- **Animações**: Transições suaves e feedback visual
+- login demonstrativo com validação de formulário;
+- dashboard com cartões e atividades recentes;
+- escolha de cartão, valor e forma de pagamento;
+- confirmação visual da recarga;
+- extrato com filtros e ordenação;
+- perfil, dados pessoais, notificações e configurações;
+- páginas de pagamentos, privacidade, relatórios, ajuda e suporte;
+- navegação responsiva orientada a dispositivos móveis.
 
-## 🛠️ Tecnologias Utilizadas
+> Os dados, a autenticação e as transações são simulados no frontend. Nenhum pagamento real é processado.
 
-- **React.js 18** - Framework principal
-- **Vite** - Build tool e dev server
-- **Tailwind CSS** - Framework de estilização
-- **React Router DOM** - Roteamento
-- **React Icons** - Biblioteca de ícones
-- **JavaScript ES6+** - Linguagem de programação
+## Estrutura
 
-## 📁 Estrutura do Projeto
-
-```
+```text
 src/
-├── assets/           # Imagens e recursos estáticos
-├── components/       # Componentes reutilizáveis
-│   ├── Header.jsx
-│   ├── Button.jsx
-│   ├── InputField.jsx
-│   └── Card.jsx
-├── pages/           # Páginas da aplicação
-│   ├── Login.jsx
-│   ├── Dashboard.jsx
-│   ├── Recharge.jsx
-│   ├── RechargeSuccess.jsx
-│   ├── Statement.jsx
-│   └── Profile.jsx
-├── data/            # Dados mockados
-│   └── mock.js
-├── App.jsx          # Componente principal com roteamento
-├── main.jsx         # Ponto de entrada da aplicação
-└── index.css        # Estilos globais e configuração do Tailwind
+├── components/   # componentes reutilizáveis
+├── data/         # dados locais de demonstração
+├── pages/        # telas e fluxos da aplicação
+├── App.jsx       # rotas
+└── main.jsx      # inicialização
 ```
 
-## 🚀 Como Executar
+## Tecnologias
 
-1. **Instalar dependências:**
-   ```bash
-   npm install
-   ```
+- React 19
+- React Router 7
+- Vite 7
+- Tailwind CSS
+- React Icons
+- ESLint
+- GitHub Actions
 
-2. **Executar em modo de desenvolvimento:**
-   ```bash
-   npm run dev
-   ```
+## Execução local
 
-3. **Acessar a aplicação:**
-   Abra [http://localhost:5173](http://localhost:5173) no seu navegador
+Requisitos: Node.js 20 ou superior.
 
-## 📱 Páginas da Aplicação
+```bash
+git clone https://github.com/endeson12/recarga-ja.git
+cd recarga-ja
+npm ci
+npm run dev
+```
 
-### 1. Login (`/`)
-- Formulário de autenticação com validação
-- Campos de email e senha
-- Links para recuperação de senha e criação de conta
-- Redirecionamento automático para dashboard após login
+## Verificação
 
-### 2. Dashboard (`/dashboard`)
-- Saudação personalizada com nome do usuário
-- Carrossel de cartões de transporte
-- Ações rápidas (Recarregar, Extrato, Gerenciar)
-- Atividade recente com histórico de transações
+```bash
+npm run lint
+npm run build
+```
 
-### 3. Recarga (`/recarregar`)
-- Seleção de cartão para recarga
-- Valores pré-definidos (R$ 10, 20, 50, 100)
-- Campo para valor personalizado
-- Seleção de forma de pagamento
-- Resumo da transação com cálculo do novo saldo
+A branch principal também passa por essas verificações no GitHub Actions.
 
-### 4. Sucesso da Recarga (`/recarga-sucesso`)
-- Confirmação visual da recarga realizada
-- Detalhes da transação
-- Opções para voltar ao início ou fazer nova recarga
+## Decisões e limitações
 
-### 5. Extrato (`/extrato`)
-- Resumo do período com totais
-- Filtros por tipo de transação
-- Ordenação por data ou valor
-- Lista detalhada de todas as transações
-- Opção de exportar dados
+- o uso de dados locais torna a demonstração independente de backend;
+- o projeto não armazena credenciais nem dados financeiros reais;
+- autenticação, pagamentos, notificações e exportações precisam de serviços externos para uso em produção;
+- ainda não há suíte de testes automatizados no repositório.
 
-### 6. Perfil (`/perfil`)
-- Informações do usuário
-- Estatísticas de uso
-- Menu de configurações
-- Opções de segurança e privacidade
+## Próximas evoluções
 
-## 🎯 Componentes Reutilizáveis
+- API e banco de dados;
+- autenticação segura;
+- integração com provedor de pagamentos;
+- testes unitários e de fluxo;
+- PWA e suporte offline.
 
-### Header
-- Título da página
-- Botão de voltar opcional
-- Ícone de perfil
+## Licença
 
-### Button
-- Múltiplos tipos (primário, secundário, outline, danger)
-- Diferentes tamanhos
-- Estados de loading e disabled
-
-### InputField
-- Label flutuante
-- Validação de erro
-- Suporte a diferentes tipos de input
-
-### Card
-- Container genérico com sombra
-- Suporte a interação (onClick)
-- Padding e estilos customizáveis
-
-## 📊 Dados Mockados
-
-O projeto inclui dados simulados para demonstração:
-- **Usuário**: Jennifer (jennifer@email.com)
-- **Cartões**: Bilhete Único e Cartão Metrô
-- **Transações**: Histórico de recargas e usos
-- **Formas de Pagamento**: PIX, Crédito, Débito
-
-## 🔧 Configuração do Tailwind CSS
-
-O projeto está configurado com:
-- Fontes personalizadas (Inter, Poppins)
-- Cores do tema (primary, background, card)
-- Classes utilitárias customizadas
-- Animações e transições
-
-## 📱 Responsividade
-
-- Design mobile-first
-- Breakpoints otimizados para dispositivos móveis
-- Interface adaptável para diferentes tamanhos de tela
-- Navegação intuitiva com gestos touch
-
-## 🎨 Design System
-
-### Cores
-- **Primária**: #2563eb (Azul moderno)
-- **Fundo**: #f3f4f6 (Cinza claro)
-- **Cards**: #ffffff (Branco)
-- **Texto**: #1f2937 (Cinza escuro)
-
-### Tipografia
-- **Fonte Principal**: Inter
-- **Fonte Secundária**: Poppins
-- **Tamanhos**: sm, base, lg, xl, 2xl, 3xl
-
-### Espaçamento
-- **Padding**: 4, 6, 8, 12, 16, 20, 24
-- **Margin**: 2, 3, 4, 6, 8, 12, 16
-- **Gap**: 2, 3, 4, 6, 8, 12
-
-## 🚀 Próximos Passos
-
-- [ ] Integração com API real
-- [ ] Sistema de autenticação completo
-- [ ] Notificações push
-- [ ] Modo offline
-- [ ] Testes automatizados
-- [ ] PWA (Progressive Web App)
-
-## 📄 Licença
-
-Este projeto foi desenvolvido como demonstração e está disponível para uso educacional.
-
----
-
-**Desenvolvido com ❤️ para facilitar a mobilidade urbana**
+Projeto de demonstração para fins educacionais e de portfólio.
